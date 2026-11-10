@@ -1,0 +1,27 @@
+<?php
+
+namespace Database\Seeders;
+
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;   // Impor class DB
+use Illuminate\Support\Facades\Hash; // Impor class Hash
+
+class adminSeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     */
+    public function run(): void
+    {
+        DB::table('admins')->insert([
+            [
+                'username' => 'mar',
+                'name' => 'marsha',
+                'password' => Hash::make('123'),
+                'created_at' => now(),
+                'updated_at' => now()
+            ]
+        ]);
+    }
+}
